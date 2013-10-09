@@ -7,6 +7,7 @@ class CreateInitialTables < ActiveRecord::Migration
     end
 
     create_table :resources do |t|
+      t.string :url
       t.belongs_to :topic
       t.timestamps
     end
