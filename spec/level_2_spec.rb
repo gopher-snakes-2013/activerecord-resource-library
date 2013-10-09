@@ -4,7 +4,7 @@ require 'spec_helper'
 
 # Unit Tests
 describe Tag do
-  xit { should have_many(:topics).through(:topic_tags) }
+  it { should have_many(:topics).through(:topic_tags) }
   describe "#name" do
     xit { should validate_uniqueness_of(:name) }
     xit { should validate_presence_of(:name)   }
