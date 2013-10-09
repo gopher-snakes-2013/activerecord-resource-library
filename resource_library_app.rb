@@ -7,6 +7,7 @@ class Topic < ActiveRecord::Base
   validates :name, :opinion, presence: true
   validates :opinion, length: { minimum: 10 }
 
+
   has_many :resources
 
   def tag_with!(tag)
@@ -20,6 +21,7 @@ end
 
 class Resource < ActiveRecord::Base
   validates :url, presence: true, format: { with: /http:\/\/.*/, message: "Only valid URL allowed"}
+  validates :topic_id, numericality: true
 
   belongs_to :topic
 end

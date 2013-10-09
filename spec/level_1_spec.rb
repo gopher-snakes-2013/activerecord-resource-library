@@ -26,7 +26,7 @@ describe Resource do
   end
 
   describe "#topic_id" do
-    xit { should validate_numericality_of(:topic_id) }
+    it { should validate_numericality_of(:topic_id) }
     xit { should validate_presence_of(:topic_id) }
   end
 
