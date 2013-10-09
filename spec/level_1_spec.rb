@@ -31,7 +31,7 @@ describe Resource do
   end
 
   describe "#difficulty" do
-    xit { should ensure_inclusion_of(:difficulty).in_array([:easy, :medium,
+    it { should ensure_inclusion_of(:difficulty).in_array([:easy, :medium,
                                                           :hard]) }
   end
 end

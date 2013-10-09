@@ -23,6 +23,7 @@ class Resource < ActiveRecord::Base
 	belongs_to :topic
 
 	validates :url, :topic_id, presence: true
+	validates :difficulty, inclusion: { in: [:easy, :medium, :hard] }
 	validates :url, exclusion: { in: ["an invalid url"] }
 	validates :topic_id, numericality: true
 
