@@ -9,15 +9,15 @@ describe Topic do
   end
 
   describe "#opinion" do
-    xit { should validate_presence_of(:opinion) }
-    xit { should_not allow_value("Too short").for(:opinion) }
-    xit { should allow_value("A well thought out opinion on a subtle and nuanced
+    it { should validate_presence_of(:opinion) }
+    it { should_not allow_value("Too short").for(:opinion) }
+    it { should allow_value("A well thought out opinion on a subtle and nuanced
                             topic").for(:opinion) }
   end
 end
 
 describe Resource do
-  xit { should belong_to(:topic) }
+  it { should belong_to(:topic) }
 
   describe "#url" do
     xit { should allow_value("http://google.com/").for(:url) }

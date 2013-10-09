@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20131008235912) do
 
   create_table "topics", force: true do |t|
     t.string   "name"
+    t.string   "opinion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
