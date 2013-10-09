@@ -5,7 +5,7 @@ describe Topic do
   it { should have_many(:resources) }
 
   describe '#name' do
-    xit { should validate_presence_of(:name) }
+    it { should validate_presence_of(:name) }
   end
 
   describe "#opinion" do
