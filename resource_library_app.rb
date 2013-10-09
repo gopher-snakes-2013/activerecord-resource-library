@@ -25,6 +25,8 @@ class Resource < ActiveRecord::Base
   validates :url, presence: true
   validates :topic_id, numericality: true
   validates :topic_id, presence: true
+  validates :difficulty, inclusion: { in: [:easy, :medium, :hard] }
+
 
 end
 
