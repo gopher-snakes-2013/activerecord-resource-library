@@ -21,8 +21,8 @@ describe Resource do
 
   describe "#url" do
     it { should allow_value("http://google.com/").for(:url) }
-    xit { should_not allow_value("an invalid url").for(:url) }
-    xit { should validate_presence_of(:url) }
+    it { should_not allow_value("an invalid url").for(:url) }
+    it { should validate_presence_of(:url) }
   end
 
   describe "#topic_id" do
