@@ -23,7 +23,8 @@ end
 class Resource < ActiveRecord::Base
   belongs_to :topic
   validates :url, format: { with: /(http(?:s)?\:\/\/[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*\.[a-zA-Z]{2,6}(?:\/?|(?:\/[\w\-]+)*)(?:\/?|\/\w+\.[a-zA-Z]{2,4}(?:\?[\w]+\=[\w\-]+)?)?(?:\&[\w]+\=[\w\-]+)*)/, 
-                            message: "Please use a valid url."}
+                            message: "Please use a valid url."},
+                  presence: true          
 
 end
 
