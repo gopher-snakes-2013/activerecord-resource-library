@@ -8,7 +8,9 @@ class Topic < ActiveRecord::Base
   end
 
   def add_resource!(resource)
-    # IMPLEMENT ME
+    temp_resource = Resource.create(resource)
+    self.resources << temp_resource
+    temp_resource
   end
 
 end
