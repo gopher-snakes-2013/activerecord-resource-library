@@ -3,6 +3,7 @@ require 'shoulda-matchers'
 require 'securerandom'
 require 'faker'
 
+
 def random_resource_attributes
   {
     url: "http://example.com/#{SecureRandom.hex(6)}",
