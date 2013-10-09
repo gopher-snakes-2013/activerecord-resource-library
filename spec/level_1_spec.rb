@@ -17,7 +17,7 @@ describe Topic do
 end
 
 describe Resource do
-  xit { should belong_to(:topic) }
+  it { should belong_to(:topic) }
 
   describe "#url" do
     xit { should allow_value("http://google.com/").for(:url) }
