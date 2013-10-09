@@ -24,7 +24,7 @@ describe Resource do
   it { should belong_to(:topic) }
 
   describe "#url" do
-    xit { should allow_value("http://google.com/").for(:url) }
+    it { should allow_value("http://google.com/").for(:url) }
     xit { should_not allow_value("an invalid url").for(:url) }
     xit { should validate_presence_of(:url) }
   end
