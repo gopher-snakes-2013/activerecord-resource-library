@@ -2,7 +2,7 @@ require 'spec_helper'
 
 # Unit Tests
 describe Topic do
-  xit { should have_many(:resources) }
+  it { should have_many(:resources) }
 
   describe '#name' do
     xit { should validate_presence_of(:name) }
