@@ -43,4 +43,5 @@ class Tag < ActiveRecord::Base
   has_many :topics, through: :topic_tags
 
   validates :name, uniqueness: true
+  validates :name, presence: true
 end
