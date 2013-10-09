@@ -26,7 +26,8 @@ class Resource < ActiveRecord::Base
                             message: "Please use a valid url."},
                   presence: true    
   validates :topic_id, numericality: { only_integer: true },
-                       presence: true      
+                       presence: true
+  validates :difficulty, inclusion: { in: [:easy, :medium, :hard] }  
 
 end
 
