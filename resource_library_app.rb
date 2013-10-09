@@ -7,8 +7,6 @@ class Topic < ActiveRecord::Base
 	has_many :resources
 
 	validates :name, :opinion, presence: true
-	validates :opinion, exclusion: { in: ["Too short"] }
-
 
   def tag_with!(tag)
     # IMPLEMENT ME
