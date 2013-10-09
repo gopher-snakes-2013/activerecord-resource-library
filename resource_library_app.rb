@@ -22,7 +22,7 @@ end
 class Resource < ActiveRecord::Base
 	belongs_to :topic
 
-	validates :url, presence: true
+	validates :url, :topic_id, presence: true
 	validates :url, exclusion: { in: ["an invalid url"] }
 	validates :topic_id, numericality: true
 
