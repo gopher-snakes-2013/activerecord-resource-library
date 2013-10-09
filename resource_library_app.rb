@@ -13,6 +13,13 @@ class Topic < ActiveRecord::Base
 
   def tag_with!(tag)
     # IMPLEMENT ME
+    # p '*' * 100
+    # p tag.id
+    # p self.id
+    # self.topic_tags << tag.id
+
+    TopicTag.create(:topic_id => self.id, :tag_id => tag.id)
+
   end
 
   def add_resource!(resource)
