@@ -13,6 +13,7 @@ class Topic < ActiveRecord::Base
 
   def tag_with!(tag)
     # IMPLEMENT ME
+    TopicTag.create(topic_id: self.id, tag_id: tag.id)
   end
 
   def add_resource!(resource)
