@@ -22,11 +22,11 @@ describe Resource do
   describe "#url" do
     it { should allow_value("http://google.com/").for(:url) }
     it { should_not allow_value("an invalid url").for(:url) }
-    xit { should validate_presence_of(:url) }
+    it { should validate_presence_of(:url) }
   end
 
   describe "#topic_id" do
-    xit { should validate_numericality_of(:topic_id) }
+    it { should validate_numericality_of(:topic_id) }
     xit { should validate_presence_of(:topic_id) }
   end
 
