@@ -1,7 +1,7 @@
 class CreateInitialTables < ActiveRecord::Migration
   def up
     create_table :topics do |t|
-
+      t.string :name
       t.timestamps
     end
 
