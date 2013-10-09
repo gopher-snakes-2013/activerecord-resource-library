@@ -26,6 +26,9 @@ class Resource < ActiveRecord::Base
 	validates :url, format: { with: /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/, multiline: true }
 	validates :topic_id, presence: true
 	validates :topic_id, numericality: true
+	validates :difficulty, inclusion:  { in: [:easy, :medium, :hard] }
+
+	attr_accessor :difficulty
 end
 
 class TopicTag < ActiveRecord::Base
