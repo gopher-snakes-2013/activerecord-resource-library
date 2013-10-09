@@ -1,7 +1,11 @@
 require 'spec_helper'
-
 # Unit Tests
 describe Topic do
+
+  before :all do
+    Topic.create({name: "#{Faker::Name.name}"})
+  end
+  
   it { should have_many(:resources) }
 
   describe '#name' do
@@ -10,10 +14,10 @@ describe Topic do
 
   describe "#opinion" do
     it { should validate_presence_of(:opinion) }
-    xit { should_not allow_value("Too short").for(:opinion) }
-    xit { should allow_value("A well thought out opinion on a subtle and nuanced
-                            topic").for(:opinion) }
-  end
+      it { should_not allow_value("Too short").for(:opinion) }
+      xit { should allow_value("A well thought out opinion on a subtle and nuanced
+                              topic").for(:opinion) }
+    end
 end
 
 describe Resource do
