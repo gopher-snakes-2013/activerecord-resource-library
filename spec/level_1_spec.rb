@@ -12,17 +12,17 @@ describe Topic do
     it { should validate_presence_of(:opinion) }
     describe "opinion has a minimum length of 15" do
       it { should_not allow_value("Too short").for(:opinion) }
-      xit { should allow_value("A well thought out opinion on a subtle and nuanced
+      it { should allow_value("A well thought out opinion on a subtle and nuanced
                             topic").for(:opinion) }
     end
   end
 end
 
 describe Resource do
-  xit { should belong_to(:topic) }
+  it { should belong_to(:topic) }
 
   describe "#url" do
-    xit { should allow_value("http://google.com/").for(:url) }
+    it { should allow_value("http://google.com/").for(:url) }
     xit { should_not allow_value("an invalid url").for(:url) }
     xit { should validate_presence_of(:url) }
   end
