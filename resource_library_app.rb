@@ -13,7 +13,7 @@ class Topic < ActiveRecord::Base
   end
 
   def add_resource!(resource)
-    # IMPLEMENT ME
+    #self.resources << Resource.create(resource)
   end
 
 end
