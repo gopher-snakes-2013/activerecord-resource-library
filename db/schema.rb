@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131008235912) do
+ActiveRecord::Schema.define(version: 20131009180354) do
 
   create_table "resources", force: true do |t|
     t.string   "url"
     t.integer  "topic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "difficulty"
   end
 
   create_table "tags", force: true do |t|

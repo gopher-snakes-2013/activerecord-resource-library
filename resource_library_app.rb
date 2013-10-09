@@ -21,8 +21,8 @@ end
 
 class Resource < ActiveRecord::Base
   validates :url, presence: true, format: { with: /http:\/\/.*/, message: "Only valid URL allowed"}
-  validates :topic_id, numericality: true
-
+  validates :topic_id, numericality: true, presence: true
+  validates :difficulty, inclusion: { in:[:easy, :medium, :hard] }
   belongs_to :topic
 end
 
