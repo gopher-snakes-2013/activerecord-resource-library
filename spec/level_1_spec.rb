@@ -41,7 +41,7 @@ end
 describe "Topics and Resources" do
   let(:topic) { Topic.create(random_topic_attributes) }
   describe "#add_resource!" do
-    xit "saves the resource to the database in that topic" do
+    it "saves the resource to the database in that topic" do
       resource_attributes = random_resource_attributes
       resource = topic.add_resource!(resource_attributes)
       expect(Resource.where(topic_id: topic.id)).to include resource

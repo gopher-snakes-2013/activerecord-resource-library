@@ -5,7 +5,6 @@ set :database, 'sqlite3:///db/resource_library.sqlite3'
 
 class Topic < ActiveRecord::Base
   validates :name, :opinion, presence: true
-  # validates :opinion, presence: true 
   validates :opinion, length: { minimum: 10 }
 
   has_many :resources
@@ -17,6 +16,10 @@ class Topic < ActiveRecord::Base
 
   def add_resource!(resource)
     # IMPLEMENT ME
+    res = Resource.create(resource)
+    self.resources.push(res)
+    res
+    #instantiate a Ressource.new({resource => topic_id =>})
   end
 end
 
