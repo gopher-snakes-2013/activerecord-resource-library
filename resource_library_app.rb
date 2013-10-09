@@ -4,8 +4,9 @@ require 'sinatra/activerecord'
 set :database, 'sqlite3:///db/resource_library.sqlite3'
 
 class Topic < ActiveRecord::Base
-  validates :name, presence: true
-  validates :opinion, presence: true
+  validates :name, :opinion, presence: true
+  # validates :opinion, presence: true 
+  validates :opinion, length: { minimum: 10 }
 
   has_many :resources
 
