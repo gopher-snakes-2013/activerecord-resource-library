@@ -14,7 +14,7 @@ class Topic < ActiveRecord::Base
   end
 
   def add_resource!(resource)
-    # IMPLEMENT ME
+    Resource.create!(topic_id: self.id, url: resource[:url], difficulty: resource[:difficulty])
   end
 end
 
