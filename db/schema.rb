@@ -26,16 +26,21 @@ ActiveRecord::Schema.define(version: 20131008235912) do
     t.datetime "updated_at"
   end
 
-  create_table "topic_tags", force: true do |t|
-    t.integer  "topic_id"
-    t.integer  "tag_id"
+  create_table "topic_tags", id: false, force: true do |t|
+    t.integer  "tag_id",     null: false
+    t.integer  "topic_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "topic_tags", ["tag_id"], name: "index_topic_tags_on_tag_id"
+  add_index "topic_tags", ["topic_id"], name: "index_topic_tags_on_topic_id"
+
   create_table "topics", force: true do |t|
-    t.string "name"
-    t.text   "opinion"
+    t.string   "name"
+    t.string   "opinion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
