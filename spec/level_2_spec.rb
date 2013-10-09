@@ -4,19 +4,19 @@ require 'spec_helper'
 
 # Unit Tests
 describe Tag do
-  xit { should have_many(:topics).through(:topic_tags) }
+  it { should have_many(:topics).through(:topic_tags) }
   describe "#name" do
-    xit { should validate_uniqueness_of(:name) }
-    xit { should validate_presence_of(:name)   }
+    it { should validate_uniqueness_of(:name) }
+    it { should validate_presence_of(:name)   }
   end
 end
 
 describe Topic do
-  xit { should have_many(:tags).through(:topic_tags) }
+  it { should have_many(:tags).through(:topic_tags) }
 end
 
 describe TopicTag do
-  xit { should validate_uniqueness_of(:topic_id).scoped_to(:tag_id) }
+  it { should validate_uniqueness_of(:topic_id).scoped_to(:tag_id) }
 end
 
 # Integration Tests
