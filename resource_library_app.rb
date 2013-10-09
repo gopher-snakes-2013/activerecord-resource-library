@@ -21,6 +21,8 @@ end
 class Resource < ActiveRecord::Base
   belongs_to :topic
 
+  validates :url, format: { with: /http:\/\/[\w]+[.]\w{2,}/ }
+
 end
 
 class TopicTag < ActiveRecord::Base
