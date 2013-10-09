@@ -12,7 +12,7 @@ describe Tag do
 end
 
 describe Topic do
-  xit { should have_many(:tags).through(:topic_tags) }
+  it { should have_many(:tags).through(:topic_tags) }
 end
 
 describe TopicTag do
