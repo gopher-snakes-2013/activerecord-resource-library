@@ -14,7 +14,8 @@ class Topic < ActiveRecord::Base
   end
 
   def add_resource!(resource)
-    # IMPLEMENT ME
+  	resource[:topic_id] = self.id
+  	Resource.create(resource)
   end
 end
 
@@ -25,7 +26,6 @@ class Resource < ActiveRecord::Base
 	validates :url, format: { with: /((http(?:s)?\:\/\/)?[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*\.[a-zA-Z]{2,6}(?:\/?|(?:\/[\w\-]+)*)(?:\/?|\/\w+\.[a-zA-Z]{2,4}(?:\?[\w]+\=[\w\-]+)?)?(?:\&[\w]+\=[\w\-]+)*)/ } 
 	validates :difficulty, inclusion: { in: [:easy, :medium, :hard] }
 	validates :topic_id, numericality: true
-
 
 end
 
