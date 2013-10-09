@@ -1,22 +1,11 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require_relative 'models/resource'
+require_relative 'models/topic'
+# require_relative 'models/topic_tag'
+# require_relative 'models/tag'
 
 set :database, 'sqlite3:///db/resource_library.sqlite3'
-
-class Topic < ActiveRecord::Base
-
-  def tag_with!(tag)
-    # IMPLEMENT ME
-  end
-
-  def add_resource!(resource)
-    # IMPLEMENT ME
-  end
-end
-
-class Resource < ActiveRecord::Base
-
-end
 
 class TopicTag < ActiveRecord::Base
 

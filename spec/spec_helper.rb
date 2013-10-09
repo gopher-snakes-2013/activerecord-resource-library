@@ -2,9 +2,7 @@ require './resource_library_app'
 require 'shoulda-matchers'
 require 'securerandom'
 require 'faker'
-require 'active_record'
-require_relative '../models/resource'
-require_relative '../models/topic'
+
 
 def random_resource_attributes
   {
