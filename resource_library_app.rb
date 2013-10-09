@@ -5,9 +5,9 @@ set :database, 'sqlite3:///db/resource_library.sqlite3'
 
 class Topic < ActiveRecord::Base
   has_many :resources
-  validates :name, presence: true
+  validates :name, :opinion, presence: true
 
-  attr_accessor :name
+  attr_accessor :name, :opinion
 
   def tag_with!(tag)
     # IMPLEMENT ME
