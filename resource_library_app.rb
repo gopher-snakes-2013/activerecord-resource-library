@@ -14,8 +14,9 @@ class Topic < ActiveRecord::Base
     # IMPLEMENT ME
   end
 
-  def add_resource!(resource)
-    # IMPLEMENT ME
+  def add_resource!(resource_attributes)
+    resource_attributes[:topic_id] = self.id
+    Resource.create!(resource_attributes)
   end
 end
 
@@ -23,6 +24,7 @@ class Resource < ActiveRecord::Base
   validates :url, presence: true, format: { with: /http:\/\/.*/, message: "Only valid URL allowed"}
   validates :topic_id, numericality: true, presence: true
   validates :difficulty, inclusion: { in:[:easy, :medium, :hard] }
+
   belongs_to :topic
 end
 
