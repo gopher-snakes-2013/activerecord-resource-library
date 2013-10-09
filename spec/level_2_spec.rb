@@ -7,7 +7,7 @@ describe Tag do
   it { should have_many(:topics).through(:topic_tags) }
   describe "#name" do
     it { should validate_uniqueness_of(:name) }
-    xit { should validate_presence_of(:name)   }
+    it { should validate_presence_of(:name)   }
   end
 end
 
