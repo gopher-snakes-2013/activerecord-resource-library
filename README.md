@@ -20,6 +20,8 @@ Chagne 1 `xit` to `it` at a time and commit each time you make the test pass.
 Submit a pull request to this repository before leaving for lunch so your peers
 can review your code.
 
+**DO NOT MERGE SOLUTION PULL REQUESTS INTO THIS REPOSITORY**
+
 ## Helpful Resources
 1. [Shoulda Matchers](http://rubydoc.info/github/thoughtbot/shoulda-matchers/master/frames)
 1. [Creating a table](http://guides.rubyonrails.org/migrations.html#creating-a-table)
