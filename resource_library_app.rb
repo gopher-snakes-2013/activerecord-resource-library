@@ -24,6 +24,7 @@ class Resource < ActiveRecord::Base
 
 	validates :url, presence: true
 	validates :url, exclusion: { in: ["an invalid url"] }
+	validates :topic_id, numericality: true
 
 
 end
