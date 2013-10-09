@@ -7,8 +7,7 @@ class Topic < ActiveRecord::Base
 	has_many :resources
 
 	validates :name, :opinion, presence: true
-	validates :opinion, exclusion: { in: ["Too short"] }
-
+	validates :opinion, length: { minimum: 10 }
 
   def tag_with!(tag)
     # IMPLEMENT ME
@@ -23,8 +22,8 @@ class Resource < ActiveRecord::Base
 	belongs_to :topic
 
 	validates :url, :topic_id, presence: true
+	validates :url, format: { with: /((http(?:s)?\:\/\/)?[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*\.[a-zA-Z]{2,6}(?:\/?|(?:\/[\w\-]+)*)(?:\/?|\/\w+\.[a-zA-Z]{2,4}(?:\?[\w]+\=[\w\-]+)?)?(?:\&[\w]+\=[\w\-]+)*)/ } 
 	validates :difficulty, inclusion: { in: [:easy, :medium, :hard] }
-	validates :url, exclusion: { in: ["an invalid url"] }
 	validates :topic_id, numericality: true
 
 
