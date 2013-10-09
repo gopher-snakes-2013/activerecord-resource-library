@@ -6,6 +6,7 @@ class CreateInitialTables < ActiveRecord::Migration
     end
 
     create_table :resources do |t|
+      t.integer :topic_id
 
       t.timestamps
     end
