@@ -35,6 +35,7 @@ class Resource < ActiveRecord::Base
 end
 
 class TopicTag < ActiveRecord::Base
+  validates :topic_id, uniqueness: { scope: :tag_id }
 
 end
 
