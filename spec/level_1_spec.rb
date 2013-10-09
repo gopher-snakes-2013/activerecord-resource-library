@@ -9,7 +9,7 @@ describe Topic do
   end
 
   describe "#opinion" do
-    xit { should validate_presence_of(:opinion) }
+    it { should validate_presence_of(:opinion) }
     xit { should_not allow_value("Too short").for(:opinion) }
     xit { should allow_value("A well thought out opinion on a subtle and nuanced
                             topic").for(:opinion) }
