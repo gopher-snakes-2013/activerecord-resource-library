@@ -9,6 +9,8 @@ class Topic < ActiveRecord::Base
 
 
   has_many :resources
+  has_many :topic_tags
+  has_many :tags, through: :topic_tags
 
   def tag_with!(tag)
     # IMPLEMENT ME
@@ -29,9 +31,11 @@ class Resource < ActiveRecord::Base
 end
 
 class TopicTag < ActiveRecord::Base
-
+  belongs_to :topic
+  belongs_to :tag
 end
 
 class Tag < ActiveRecord::Base
-
+  has_many :topic_tags
+  has_many :topics, through: :topic_tags
 end
