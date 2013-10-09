@@ -23,6 +23,7 @@ class Resource < ActiveRecord::Base
 
   validates :url, format: { with: /http:\/\/[\w]+[.]\w{2,}/ }
   validates :url, presence: true
+  validates :topic_id, numericality: true
 
 end
 
