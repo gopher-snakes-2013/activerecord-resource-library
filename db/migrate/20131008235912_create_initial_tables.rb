@@ -1,11 +1,14 @@
 class CreateInitialTables < ActiveRecord::Migration
   def up
     create_table :topics do |t|
+      t.string :name
+      t.string :opinion
 
       t.timestamps
     end
 
     create_table :resources do |t|
+      t.integer :topic_id
 
       t.timestamps
     end
