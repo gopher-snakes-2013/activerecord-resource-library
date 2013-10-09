@@ -2,14 +2,14 @@ require 'spec_helper'
 
 # Unit Tests
 describe Topic do
-  xit { should have_many(:resources) }
+  it { should have_many(:resources) }
 
   describe '#name' do
-    xit { should validate_presence_of(:name) }
+    it { should validate_presence_of(:name) }
   end
 
   describe "#opinion" do
-    xit { should validate_presence_of(:opinion) }
+    it { should validate_presence_of(:opinion) }
     xit { should_not allow_value("Too short").for(:opinion) }
     xit { should allow_value("A well thought out opinion on a subtle and nuanced
                             topic").for(:opinion) }
