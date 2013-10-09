@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009171926) do
+ActiveRecord::Schema.define(version: 20131009173038) do
 
   create_table "resources", force: true do |t|
     t.integer  "topic_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20131009171926) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "opinion"
   end
 
 end
