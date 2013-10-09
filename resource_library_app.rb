@@ -8,14 +8,19 @@ class Topic < ActiveRecord::Base
   validates :opinion, presence: true, length: { minimum: 10 }
 
   has_many :resources
+  has_many :topic_tags
+  has_many :tags, through: :topic_tags
 
   def tag_with!(tag)
     # IMPLEMENT ME
   end
 
-  def add_resource!(resource)
-    resource[:topic_id] = self.id
-    Resource.create!(resource)
+  def add_resource!(resource) 
+    # resource[:topic_id] = self.id
+    # Resource.create!(resource)
+
+    self.resources.create(resource)
+    # self.resources << Resource.create(resource) => won't pass rspec test because of topic_id validation, but would work for assigning topic_id
   end
 end
 
@@ -29,10 +34,12 @@ class Resource < ActiveRecord::Base
 end
 
 class TopicTag < ActiveRecord::Base
-
+  belongs_to :topic
+  belongs_to :tag
 end
 
 class Tag < ActiveRecord::Base
-
+  has_many :topic_tags
+  has_many :topics, through: :topic_tags
 end
 
