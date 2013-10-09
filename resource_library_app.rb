@@ -5,6 +5,7 @@ set :database, 'sqlite3:///db/resource_library.sqlite3'
 
 class Topic < ActiveRecord::Base
   validates :name, presence: true
+  validates :opinion, presence: true
 
   has_many :resources
 
