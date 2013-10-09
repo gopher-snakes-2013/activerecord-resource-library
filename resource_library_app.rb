@@ -19,6 +19,7 @@ class Topic < ActiveRecord::Base
 end
 
 class Resource < ActiveRecord::Base
+  belongs_to :topic
 
 end
 
