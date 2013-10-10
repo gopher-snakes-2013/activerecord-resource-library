@@ -6,7 +6,11 @@ class Topic < ActiveRecord::Base
   validates :opinion, :presence => true, length: { minimum: 15 }
 
   def tag_with!(tag)
-    # IMPLEMENT ME
+    self.tags << tag unless self.tags.include?(tag)
+  end
+
+  def self.tagged_with(tag)
+    tag.topics
   end
 
   def add_resource!(resource)

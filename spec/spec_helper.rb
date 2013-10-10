@@ -30,5 +30,6 @@ RSpec.configure do |config|
     Topic.destroy_all
     Resource.destroy_all
     Tag.destroy_all
+    TopicTag.destroy_all
   end
 end
