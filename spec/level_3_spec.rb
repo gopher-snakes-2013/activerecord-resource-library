@@ -13,12 +13,12 @@ describe Topic do
     end
     let(:topics) { Topic.tagged_with(tag) }
 
-    xit "includes topics tagged with the passed in tag" do
+    it "includes topics tagged with the passed in tag" do
       expect(topics).to include topic1
       expect(topics).to include topic3
     end
 
-    xit "does not include topics not tagged with the passed in tag name" do
+    it "does not include topics not tagged with the passed in tag name" do
       expect(topics).not_to include topic2
       expect(topics).not_to include topic4
     end
