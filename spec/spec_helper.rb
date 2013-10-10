@@ -3,6 +3,7 @@ require 'shoulda-matchers'
 require 'securerandom'
 require 'faker'
 
+
 def random_resource_attributes
   {
     url: "http://example.com/#{SecureRandom.hex(6)}",
@@ -29,5 +30,6 @@ RSpec.configure do |config|
     Topic.destroy_all
     Resource.destroy_all
     Tag.destroy_all
+    TopicTag.destroy_all
   end
 end
