@@ -19,6 +19,10 @@ class Topic < ActiveRecord::Base
   	resource[:topic_id] = self.id
   	Resource.create(resource)
   end
+
+  def self.tagged_with(tag)
+    tag.topics
+  end
 end
 
 class Resource < ActiveRecord::Base
