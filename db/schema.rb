@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009193415) do
+ActiveRecord::Schema.define(version: 20131010041137) do
 
   create_table "resources", force: true do |t|
     t.integer  "topic_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20131009193415) do
   create_table "tags", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "name"
   end
 
   create_table "topic_tags", force: true do |t|
