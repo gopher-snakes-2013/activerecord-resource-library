@@ -6,7 +6,7 @@ require 'spec_helper'
 describe Tag do
   it { should have_many(:topics).through(:topic_tags) }
   describe "#name" do
-    xit { should validate_uniqueness_of(:name) }
+    it { should validate_uniqueness_of(:name) }
     xit { should validate_presence_of(:name)   }
   end
 end
