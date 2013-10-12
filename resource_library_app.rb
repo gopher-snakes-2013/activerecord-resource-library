@@ -15,7 +15,8 @@ class Topic < ActiveRecord::Base
   end
 
   def add_resource!(resource)
-    # IMPLEMENT ME
+    resource[:topic_id] = self.id
+    Resource.create(resource)
   end
 end
 
