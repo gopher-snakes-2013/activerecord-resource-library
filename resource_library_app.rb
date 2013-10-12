@@ -6,12 +6,13 @@ set :database, 'sqlite3:///db/resource_library.sqlite3'
 class Topic < ActiveRecord::Base
 
   has_many :resources
+  has_many :topic_tags
 
   validates :name, presence: true
   validates :opinion, presence: true, length: { minimum: 15 }
 
   def tag_with!(tag)
-    # IMPLEMENT ME
+    TopicTag.create(:topic_id => self.id, :tag_id => tag.id)
   end
 
   def add_resource!(resource)

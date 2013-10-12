@@ -26,7 +26,7 @@ describe "Tags and Topics" do
   let(:tag) { Tag.create(random_tag_attributes) }
 
   describe "Topic#tag_with" do
-    xit "adds the tag to the topic" do
+    it "adds the tag to the topic" do
       topic.tag_with!(tag)
       expect(TopicTag.where(topic_id: topic.id, tag_id: tag.id)).to exist
     end
