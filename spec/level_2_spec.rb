@@ -16,7 +16,7 @@ describe Topic do
 end
 
 describe TopicTag do
-  xit { should validate_uniqueness_of(:topic_id).scoped_to(:tag_id) }
+  it { should validate_uniqueness_of(:topic_id).scoped_to(:tag_id) }
 end
 
 # Integration Tests
@@ -31,7 +31,7 @@ describe "Tags and Topics" do
       expect(TopicTag.where(topic_id: topic.id, tag_id: tag.id)).to exist
     end
 
-    it "only adds the tag once" do
+    xit "only adds the tag once" do
       topic.tag_with!(tag)
       topic.tag_with!(tag)
       expect(topic.tags.where(tag_id: tag.id).count).to eql 1
