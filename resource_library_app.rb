@@ -26,7 +26,7 @@ class Resource < ActiveRecord::Base
   validates :url, presence: true
   validates_format_of :url, :with => URI::regexp(%w(http https))
   validates :topic_id, numericality: true, presence: true
-  validates_inclusion_of :difficulty, :in => ["easy", "medium", "hard"]
+  validates_inclusion_of :difficulty, :in => [:easy, :medium, :hard]
 
 end
 
