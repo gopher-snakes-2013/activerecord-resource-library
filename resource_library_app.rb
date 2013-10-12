@@ -39,7 +39,7 @@ class TopicTag < ActiveRecord::Base
   belongs_to :tag
 
   validates :topic_id, uniqueness: { scope: :tag_id }
-  validates_uniqueness_of :tag_id, :topic_id
+  # validates :tag_id, uniqueness: { scope: :topic_id }
 
 end
 
@@ -49,5 +49,6 @@ class Tag < ActiveRecord::Base
   has_many :topics, through: :topic_tags
 
   validates :name, presence: true, uniqueness: true
+
 
 end

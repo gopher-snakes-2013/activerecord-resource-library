@@ -31,10 +31,10 @@ describe "Tags and Topics" do
       expect(TopicTag.where(topic_id: topic.id, tag_id: tag.id)).to exist
     end
 
-    xit "only adds the tag once" do
+    it "only adds the tag once" do
       topic.tag_with!(tag)
       topic.tag_with!(tag)
-      expect(topic.tags.where(tag_id: tag.id).count).to eql 1
+      expect(topic.tags.where(id: tag.id).count).to eql 1
     end
   end
 end
