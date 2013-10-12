@@ -7,12 +7,12 @@ describe Tag do
   it { should have_many(:topics).through(:topic_tags) }
   describe "#name" do
     it { should validate_uniqueness_of(:name) }
-    xit { should validate_presence_of(:name)   }
+    it { should validate_presence_of(:name)   }
   end
 end
 
 describe Topic do
-  xit { should have_many(:tags).through(:topic_tags) }
+  it { should have_many(:tags).through(:topic_tags) }
 end
 
 describe TopicTag do
@@ -31,7 +31,7 @@ describe "Tags and Topics" do
       expect(TopicTag.where(topic_id: topic.id, tag_id: tag.id)).to exist
     end
 
-    xit "only adds the tag once" do
+    it "only adds the tag once" do
       topic.tag_with!(tag)
       topic.tag_with!(tag)
       expect(topic.tags.where(tag_id: tag.id).count).to eql 1

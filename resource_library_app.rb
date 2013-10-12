@@ -7,6 +7,7 @@ class Topic < ActiveRecord::Base
 
   has_many :resources
   has_many :topic_tags
+  has_many :tags, through: :topic_tags
 
   validates :name, presence: true
   validates :opinion, presence: true, length: { minimum: 15 }
@@ -37,6 +38,9 @@ class TopicTag < ActiveRecord::Base
   belongs_to :topic
   belongs_to :tag
 
+  validates :topic_id, uniqueness: { scope: :tag_id }
+  validates_uniqueness_of :tag_id, :topic_id
+
 end
 
 class Tag < ActiveRecord::Base
@@ -44,7 +48,6 @@ class Tag < ActiveRecord::Base
   has_many :topic_tags
   has_many :topics, through: :topic_tags
 
-  validates_uniqueness_of :name
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
 end
